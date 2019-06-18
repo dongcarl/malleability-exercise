@@ -33,7 +33,15 @@ Compile Bitcoin Core:
 ```sh
 ./autogen.sh
 ./configure --disable-bench --disable-zmq --without-gui --without-libs --without-miniupnpc
+```
+For Linux:
+```sh
 make -j"$(($(nproc)+1))"
+```
+
+For Mac:
+```sh
+make -j "$(($(sysctl -n hw.physicalcpu)+1))"
 ```
 
 The exercise
